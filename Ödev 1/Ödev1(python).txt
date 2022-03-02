@@ -1,0 +1,45 @@
+# -----------------------1-----------------
+import math
+
+print(int(input()) + int(input()))
+# ------------------------2----------------
+print(2022 - int(input("Doğum yılı : ")))
+# ----------------------3------------------
+print(round(int(input("en") * int(input("boy")))), " br²")
+# --------------------4---------------------
+print(f"Alan : {int(input('r : ')) ** 2 * math.pi}")
+# ---------------------5----------------------
+s1 = int(input("s1 : "))
+s2 = int(input("s2 : "))
+if s1 < s2:
+    s1, s2 = s2, s1
+print(f'Bölüm : {s1 // s2} Kalan : {s1 % s2}')
+# --------------------------6------------------------
+print((int(input()) + int(input()) + int(input())) / 3)
+# -----------------------7--------------------------
+s1 = int(input("s1 : "))
+s2 = int(input("s2 : "))
+simge = ">"
+if s1 < s2:
+    simge = "<"
+elif s1 == s2:
+    simge = "="
+print(f'{s1} {simge} {s2}')
+# ----------------------8---------------------------
+s1 = int(input())
+if s1 % 2 == 0:
+    print("Çift")
+else:
+    print("Tek")
+# -----------------------9-------------------------
+print(round(int(input()) * 1.8 + 32))
+#-----------------------10--------------------------
+s1 = int(input("s1 : "))
+s2 = int(input("s2 : "))
+if s1 < s2:
+    s1, s2 = s2, s1
+print(f"{s2} sayısı {s1} sayısını tam böl",end="")
+if s1%s2 != 0:
+    print("mez")
+else:
+    print("er")

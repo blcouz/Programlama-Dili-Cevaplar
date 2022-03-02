@@ -1,0 +1,53 @@
+        //Scanner scn komple ortak. ayrıca tek tek sayı istemek sıkıcı.
+        //-------------------------------1------------------------------
+        Scanner scn = new Scanner(System.in);
+        int say1 = scn.nextInt();
+        int say2 = scn.nextInt();
+        System.out.println(say1 + say2);
+
+        //--------------------------------2---------------------------------
+        int yil = scn.nextInt();
+        System.out.println(2022 - yil);
+        //--------------------------------3---------------------------------
+        float en = scn.nextFloat();
+        float yukseklik = scn.nextFloat();
+        System.out.println(Math.round(en * yukseklik) + "br²");
+        //---------------------------------4--------------------------------
+        float r = scn.nextFloat();
+        System.out.println("Alan : " + Math.PI * r * r);
+        //-----------------------------------5-------------------------------
+        int s1 = scn.nextInt();
+        int s2 = scn.nextInt();
+        int ydk = s2;
+        if (s1 < s2) {
+            s2 = s1;
+            s1 = ydk;
+        }
+        System.out.println("Bölüm : " + s1 / s2 + " Kalan : " + s1 % s2);
+        //--------------------------------6--------------------------------------------
+        System.out.println((scn.nextInt() + scn.nextInt() + scn.nextInt()) / 3);
+        //------------------------------------7-----------------------------------------
+        int x1 = scn.nextInt();
+        int x2 = scn.nextInt();
+        char simge = '>';
+        if (x1 < x2) {
+            simge = '<';
+        }
+        System.out.println(x1 + "" + simge + "" + x2);
+        //--------------------------------------8-----------------------------------------
+        if (scn.nextInt() % 2 == 0) {
+            System.out.println("Çift");
+        } else System.out.println("Tek");
+        //-------------------------------------9-------------------------------------------
+        System.out.println(Math.round(scn.nextInt() * 1.8 + 32));
+        //-------------------------------------10-------------------------------------------
+        int t1 = scn.nextInt();
+        int t2 = scn.nextInt();
+        int t22 = t2;
+        if(t1/t2<1){
+            t2 = t1;
+            t1 = t22;
+        }
+        System.out.print(t2 +" sayısı "+t1+" sayısını tam böl");
+        if(t1%t2 == 0) System.out.println("er");
+        else System.out.println("mez");

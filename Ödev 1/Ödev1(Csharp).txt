@@ -1,0 +1,57 @@
+//javayla aynı 
+//-------------------------------1------------------------------
+int say1 = int.Parse(Console.ReadLine());
+int say2 = int.Parse(Console.ReadLine());
+Console.WriteLine(say1 + say2);
+
+//--------------------------------2---------------------------------
+int yil = int.Parse(Console.ReadLine());
+Console.WriteLine(2022 - yil);
+//--------------------------------3---------------------------------
+double en = Convert.ToDouble(Console.ReadLine());
+double yukseklik = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine(Math.Round(en * yukseklik) + "br²");
+//---------------------------------4--------------------------------
+double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Alan : " + Math.PI * r * r);
+//-----------------------------------5-------------------------------
+int s1 = int.Parse(Console.ReadLine());
+int s2 = int.Parse(Console.ReadLine());
+int ydk = s2;
+if (s1 < s2)
+{
+    s2 = s1;
+    s1 = ydk;
+}
+Console.WriteLine("Bölüm : " + s1 / s2 + " Kalan : " + s1 % s2);
+//--------------------------------6--------------------------------------------
+Console.WriteLine((int.Parse(Console.ReadLine()) + int.Parse(Console.ReadLine()) + int.Parse(Console.ReadLine())) / 3);
+//------------------------------------7-----------------------------------------
+int x1 = int.Parse(Console.ReadLine());
+int x2 = int.Parse(Console.ReadLine());
+char simge = '>';
+if (x1 < x2)
+{
+    simge = '<';
+}
+Console.WriteLine(x1 + "" + simge + "" + x2);
+//--------------------------------------8-----------------------------------------
+if (int.Parse(Console.ReadLine()) % 2 == 0)
+{
+    Console.WriteLine("Çift");
+}
+else Console.WriteLine("Tek");
+//-------------------------------------9-------------------------------------------
+Console.WriteLine(Math.Round(int.Parse(Console.ReadLine()) * 1.8 + 32));
+//-------------------------------------10-------------------------------------------
+int t1 = int.Parse(Console.ReadLine());
+int t2 = int.Parse(Console.ReadLine());
+int t22 = t2;
+if (t1 / t2 < 1)
+{
+    t2 = t1;
+    t1 = t22;
+}
+Console.Write(t2 + " sayısı " + t1 + " sayısını tam böl");
+if (t1 % t2 == 0) Console.WriteLine("er");
+else Console.WriteLine("mez");
