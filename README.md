@@ -1,2 +1,2 @@
 # 2022 Programlama Dili Çözümleri
-Test etmek en az kullanıcıdan sayı istemek kadar sıkıcı.
+Test etmek en az kullanıcıdan sayı isteme metni yazmak kadar sıkıcı.
