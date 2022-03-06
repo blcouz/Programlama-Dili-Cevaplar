@@ -1,2 +1,2 @@
 # 2022 Programlama Dili Çözümleri
-Kullanıcıdan sayı isteme metni yazmak için fazla üşengecim.
+Kullanıcıdan sayı isteme metni yazmaya gerek duymadım.
