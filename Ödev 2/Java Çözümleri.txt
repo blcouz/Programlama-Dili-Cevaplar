@@ -1,0 +1,120 @@
+Scanner scanner = new Scanner(System.in);
+        //------------------------------------1------------------------------------
+
+
+        //System.out.print("Saniye : ");
+        //int sayi = scanner.nextInt();
+        //int saat = sayi / 3600;
+        //int dakika = (sayi - saat * 3600) / 60;
+        //int saniye = sayi % 60;
+        //System.out.println(saat + " : " + dakika + " : " + saniye);
+        //------------------------------------2------------------------------------
+
+
+        //Random uretici = new Random();
+        //int sayi = uretici.nextInt(10000-250)+250;
+        //int yedek = sayi;
+        //int bassay = 0;
+        //while (sayi != 0) {
+        //    sayi /= 10;
+        //    bassay++;
+        //}
+        //System.out.println(yedek+" sayısı : "+bassay+" basamaklıdır.");
+        //-----------------------------------------------------------------------------
+
+
+        //Random uretici = new Random();
+        //int sayi = uretici.nextInt(10000-250)+250;
+        //int yedek = sayi;
+        //System.out.println(yedek + " sayısı : "+String.valueOf(sayi).length()+" basamaklıdır.");
+        //------------------------------------3----------------------------------------
+
+
+        //System.out.print("Sayı : ");
+        //int girilen_sayi = scanner.nextInt();
+        //int ilkIkiBasamak = girilen_sayi / 100, sonIkiBasamak = girilen_sayi % 100;
+        //if ((ilkIkiBasamak + sonIkiBasamak) * (ilkIkiBasamak + sonIkiBasamak) == girilen_sayi)
+        //    System.out.println("İşte bu bir orijinal sayı");
+        //else System.out.println("Bu hiçte orijinal bir sayıya benzemiyor.");
+
+
+        //------------------------------------4----------------------------------------
+
+        //System.out.print("Saat : ");
+        //int saat = scanner.nextInt() % 12;// Eğer sayı 12 den büyük olursa açı hesaplamaları yanlış sonuç verir.Çünkü saat 12 i  geçtiğinde yani örneğin 15 iken sadece 3*30 derece ilerler 15*30 derece değil.
+        //System.out.print("Dakika : ");
+        //int dakika = scanner.nextInt();
+        //// mantık şöyle 0 ı baz alarak saat ve yelkovanın kaçar derece ileri gittiğini bulup birbirlerinden çıkarınca bize aralarındaki açıyı verecek.
+        //int yelkovanAcisi = dakika * 6;//her dakikada yelkovan 6 derece hareket eder.
+//
+        //double akrepAcisi = saat * 30;//yelkovan ın etkisini saymazsak.
+        //akrepAcisi += dakika * 0.5;// yelkovanın akrebe olan etkisi. 1 saat geçtiğinde yani 60 dakika da akrep 30 derece ileri gider yani 1 dakikada akrep 0.5 derece ileri gider.
+        //int aralarindakiFark = (int) Math.abs(akrepAcisi - yelkovanAcisi);//Burada double kullanılıp yuvarlama işlemiylede kullanılabilir.Ama ben kullanmıyorum.
+        //int buyukAci, kucukAci;
+        //if (aralarindakiFark > 180) {
+        //    buyukAci = aralarindakiFark;
+        //    kucukAci = 360 - buyukAci;
+        //} else {
+        //    kucukAci = aralarindakiFark;
+        //    buyukAci = 360 - kucukAci;
+        //}
+        //System.out.println("Akrep ile yelkovan arasındaki büyük açı : "+buyukAci+"° , küçük açı : "+kucukAci+"° dir. ");
+
+
+        //------------------------------------5----------------------------------------
+
+
+        //System.out.println("Sırasıyla a b c katsayılarını aralarında bir boşluk olacak şekilde tek seferde girin.");
+        //String[] veri = scanner.nextLine().split(" ");
+        //int a = Integer.parseInt(veri[0]), b = Integer.parseInt(veri[1]), c = Integer.parseInt(veri[2]);
+        //int delta = b * b - 4 * a * c;
+        //if (delta > 0) {
+        //    System.out.println("X1 = "+(-b + Math.sqrt(delta)) / 2 * a+" , X2 = "+ (-b - Math.sqrt(delta)) / 2 * a);
+        //} else if (delta == 0) System.out.println("X1 = X2 = " + -b / 2 * a);
+        //else System.out.println("Reek kök yok");
+
+
+        //------------------------------------5----------------------------------------
+
+        //System.out.print("Sayı : ");
+        //long girilenSayi = scanner.nextInt();
+        //long carpim = 1;
+        //for (int i = 2; i <= girilenSayi; i++) {
+        //    carpim *= i;
+        //}
+        //System.out.println(girilenSayi+"! = "+ carpim);
+
+
+        //------------------------------------6----------------------------------------
+
+
+        //System.out.print("Sayı : ");
+        //int girilenSayi = scanner.nextInt();
+        //System.out.print("Üs : ");
+        //int girilenUs = scanner.nextInt();
+        //System.out.println(girilenSayi+"^"+girilenUs+" = "+Math.round(Math.pow(girilenSayi, girilenUs)));
+
+
+        //------------------------------------7----------------------------------------
+
+        //System.out.print("Sayı : ");
+        //int girilenSayi = scanner.nextInt();
+        //int yedek = girilenSayi;
+        //int bastop = 0;
+        //while (girilenSayi != 0) {
+        //    bastop += girilenSayi % 10;
+        //    girilenSayi /= 10;
+        //}
+        //System.out.println(yedek + " sayısının basamakları toplamı " + bastop + " eder.");
+
+
+        //-----------------------------------------------------------------------------
+
+        //System.out.print("Sayı : ");
+        //String girilenSayi = scanner.nextLine();
+        //String yedek = girilenSayi;
+        //int bastop = 0;
+        //for (int i = 0; i < girilenSayi.length(); i++) {
+        //    bastop += Integer.parseInt(String.valueOf(girilenSayi.charAt(i)));
+        //}
+        //System.out.println(yedek + " sayısının basamakları toplamı " + bastop + " eder.");

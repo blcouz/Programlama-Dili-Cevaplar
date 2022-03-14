@@ -1,0 +1,130 @@
+//------------------------------------1------------------------------------
+
+
+//Console.Write("Saniye : ");
+//int sayi = int.Parse(Console.ReadLine());
+//int saat = sayi / 3600;
+//int dakika = (sayi - saat * 3600)/60;
+//int saniye = sayi % 60;
+//Console.WriteLine("{0}:{1}:{2}",saat,dakika,saniye);
+//------------------------------------2------------------------------------
+
+
+//Random uretici = new Random();
+//int sayi = uretici.Next(250, 10000);
+//int yedek = sayi;
+//int bassay = 0;
+//while (sayi != 0)
+//{
+//    sayi /= 10;
+//    bassay++;
+//}
+//Console.WriteLine("{0} sayısı : {1} basamaklıdır.",yedek,bassay);
+//-----------------------------------------------------------------------------
+
+
+//Random uretici = new Random();
+//int sayi = uretici.Next(250, 10000);
+//int yedek = sayi;
+//Console.WriteLine("{0} sayısı : {1} basamaklıdır.", yedek, yedek.ToString().Length);
+//------------------------------------3----------------------------------------
+
+
+//Console.Write("Sayı : ");
+//int girilen_sayi = int.Parse(Console.ReadLine());
+//int ilkIkiBasamak = girilen_sayi / 100,sonIkiBasamak = girilen_sayi % 100;
+//if ((ilkIkiBasamak + sonIkiBasamak) * (ilkIkiBasamak + sonIkiBasamak) == girilen_sayi) Console.WriteLine("İşte bu bir orijinal sayı");
+//else Console.WriteLine("Bu hiçte orijinal bir sayıya benzemiyor.");
+
+
+//------------------------------------4----------------------------------------
+
+//Console.Write("Saat : ");
+//int saat = int.Parse(Console.ReadLine())%12;// Eğer sayı 12 den büyük olursa açı hesaplamaları yanlış sonuç verir.Çünkü saat 12 i  geçtiğinde yani örneğin 15 iken sadece 3*30 derece ilerler 15*30 derece değil.
+//Console.Write("Dakika : ");
+//int dakika = int.Parse(Console.ReadLine());
+//// mantık şöyle 0 ı baz alarak saat ve yelkovanın kaçar derece ileri gittiğini bulup birbirlerinden çıkarınca bize aralarındaki açıyı verecek.
+//int yelkovanAcisi = dakika * 6;//her dakikada yelkovan 6 derece hareket eder.
+
+//double akrepAcisi = saat * 30;//yelkovan ın etkisini saymazsak.
+//akrepAcisi += dakika * 0.5;// yelkovanın akrebe olan etkisi. 1 saat geçtiğinde yani 60 dakika da akrep 30 derece ileri gider yani 1 dakikada akrep 0.5 derece ileri gider.
+//int aralarindakiFark = (int)Math.Abs(akrepAcisi - yelkovanAcisi);//Burada double kullanılıp yuvarlama işlemiylede kullanılabilir.Ama ben kullanmıyorum.
+//int buyukAci, kucukAci;
+//if(aralarindakiFark > 180)
+//{
+//    buyukAci = aralarindakiFark;
+//    kucukAci = 360 - buyukAci;
+//}
+//else
+//{
+//    kucukAci = aralarindakiFark;
+//    buyukAci = 360 - kucukAci;
+//}
+//Console.WriteLine("Akrep ile yelkovan arasındaki büyük açı : {0}° , küçük açı : {1}° dir. ",buyukAci,kucukAci);
+
+
+//------------------------------------5----------------------------------------
+
+
+//Console.WriteLine("Sırasıyla a b c katsayılarını aralarında bir boşluk olacak şekilde tek seferde girin.");
+//string[] veri = Console.ReadLine().Split();
+//int a = int.Parse(veri[0]), b = int.Parse(veri[1]), c = int.Parse(veri[2]);
+//int delta = b * b - 4 * a * c;
+//if (delta > 0)
+//{
+//    Console.WriteLine("X1 = {0} , X2 = {1}", (-b + Math.Sqrt(delta)) / 2 * a, (-b - Math.Sqrt(delta)) / 2 * a);
+//}
+//else if (delta == 0) Console.WriteLine("X1 = X2 = " + -b / 2 * a);
+//else Console.WriteLine("Reek kök yok");
+
+
+//------------------------------------5----------------------------------------
+
+//Console.Write("Sayı : ");
+//int girilenSayi = int.Parse(Console.ReadLine());
+//int carpim = 1;
+//for (int i = 2; i <= girilenSayi; i++)
+//{
+//    carpim *= i;
+//}
+//Console.WriteLine("{0}! = {1}",girilenSayi,carpim );
+
+
+//------------------------------------6----------------------------------------
+
+
+//Console.Write("Sayı : ");
+//int girilenSayi = int.Parse(Console.ReadLine());
+//Console.Write("Üs : ");
+//int girilenUs = int.Parse(Console.ReadLine());
+//Console.WriteLine("{0}^{1} = {2}",girilenSayi,girilenUs,Math.Pow(girilenSayi,girilenUs));
+
+
+//------------------------------------7----------------------------------------
+
+//Console.Write("Sayı : ");
+//int girilenSayi = int.Parse(Console.ReadLine());
+//int yedek = girilenSayi;
+//int bastop = 0;
+//while (girilenSayi != 0)
+//{
+//    bastop+=girilenSayi%10;
+//    girilenSayi /= 10;
+//}
+//Console.WriteLine("{0} sayısının basamakları toplamı {1} eder.",yedek,bastop);
+
+
+//-----------------------------------------------------------------------------
+
+//Console.Write("Sayı : ");
+//string girilenSayi = Console.ReadLine();
+//string yedek = girilenSayi;
+//int bastop = 0;
+//foreach (var item in girilenSayi)
+//{
+//    bastop += int.Parse(item.ToString());
+//}
+//Console.WriteLine("{0} sayısının basamakları toplamı {1} eder.",yedek,bastop);
+
+
+

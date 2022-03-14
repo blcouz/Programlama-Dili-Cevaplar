@@ -1,0 +1,44 @@
+# --------------------------------1---------------------------
+# print(timedelta(seconds=int(input("Saniye giriniz : "))))
+
+# --------------------------------2---------------------------
+# sayi = random.randint(250, 10000)
+# print(sayi, len(str(sayi)), "basamaklıdır.")
+
+# --------------------------------3---------------------------
+# sayi = int(input("Sayı Gir : "))
+# if (sayi//100 + sayi%100)**2 == sayi:
+#     print("İşte bir orijinal sayı")
+# else:
+#     print("Peh orijinal değil.")
+
+# --------------------------------4---------------------------
+# akrep_aci = (int(input("Saat : ")) % 12) * 30
+# yelkovan_aci = int(input("Dakika : ")) * 6
+# akrep_aci += yelkovan_aci / 12
+# print(f"Yelkovan ile akrep arasındaki açı {abs(akrep_aci - yelkovan_aci)}")
+
+
+# --------------------------------5---------------------------
+# a = int(input("a : "))
+# b = int(input("b : "))
+# c = int(input("c : "))
+#
+# delta = b**2 -4*a*c
+# if delta > 0:
+#     print(f"x1 = {(-b+delta**0.5)/2*a} x2 = {(-b-delta**0.5)/2*a}")
+# elif delta == 0:
+#     print(f"x1 = x2 = {-b/2*a}")
+# else:
+#     print("reel kök yok.")
+
+# --------------------------------6---------------------------
+
+# print(math.factorial(int(input("Faktöriyeli alınacak sayı : "))))
+# --------------------------------7---------------------------
+
+
+# print(f"Sonuç : {int(input('Sayı : '))**int(input('Üs : '))}")
+
+# --------------------------------8---------------------------
+# print(sum(list(map(int,input("Sayı : ")))))
