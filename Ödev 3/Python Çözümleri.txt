@@ -1,0 +1,144 @@
+def BolenleToplami(sayi):
+    toplam = 0
+    for i in range(1, sayi):
+        if sayi%i == 0:
+            toplam += i
+    return(toplam)
+
+sayi1 = int(input())
+sayi2 = int(input())
+
+if BolenleToplami(sayi1)== sayi2 and BolenleToplami(sayi2) == sayi1:
+    print("Dost sayı")
+else :
+    print("Dost Sayı değil.")
+
+
+2>
+
+def BolenlerToplami(sayi):
+    toplam = 0
+    for i in range(1, sayi):
+        if sayi%i == 0:
+            toplam += i
+    return(toplam)
+
+def BasamaklarToplami(sayi):
+    toplam = 0
+    while(sayi>0):
+        toplam += sayi%10
+        sayi = int(sayi/10)
+    return(toplam)
+
+sayi1 = int(input())
+sayi2 = int(input())
+
+    
+if BolenlerToplami(sayi1)== sayi2 and BolenlerToplami(sayi2) == sayi1 and sayi1%BasamaklarToplami(sayi1)==0 and sayi2%BasamaklarToplami(sayi2) == 0:
+    print("Dost Niven sayı")
+else :
+    print("Dost Niven Sayı değil.")
+
+
+3>
+
+def Asalmi(sayi):
+    asalmi = True
+    for i in range(2, sayi):
+        if sayi%i == 0:
+            asalmi = False
+            break
+    return (asalmi)
+
+sayi1 = int(input("Sayı : "))
+sayi2 = int(input("Sayı : "))
+
+if sayi1>sayi2:
+    sayi1,sayi2 = sayi2,sayi1
+
+for i in range(sayi1+1, sayi2):
+    if Asalmi(i):
+        print(i)
+
+
+4>
+
+def Asalmi(sayi):
+    asalmi = True
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            asalmi = False
+            break
+    return (asalmi)
+
+
+sayi1 = int(input("Sayı : "))
+sonuc = sayi1-1
+while(not Asalmi(sonuc)):
+    sonuc -=1
+print(sonuc)
+
+
+5>
+
+def Asalmi(sayi):
+    asalmi = True
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            asalmi = False
+            break
+    return (asalmi)
+
+N = int(input("Kaçıncı asalı görmek istiyorsun ? "))
+
+sayac = 0
+sayi = 2
+while True :
+    if Asalmi(sayi) :
+        sayac +=1
+    if sayac == N :
+        break
+    sayi +=1
+print(sayi)
+
+
+6>
+
+def BasamaklarToplami(sayi):
+    toplam = 0
+    while (sayi > 0):
+        toplam += sayi % 10
+        sayi = int(sayi / 10)
+    return (toplam)
+
+
+def AsalCarpanlarRakamlariToplami(sayi):
+    yedek = sayi
+    toplam = 0
+    sayac = 2
+    while sayac <= sayi:
+        if sayi % sayac == 0:
+            sayi /= sayac
+            toplam += BasamaklarToplami(sayac)
+            sayac-=1
+        sayac += 1
+    return (toplam)
+
+
+def Asalmi(sayi):
+    asalmi = True
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            asalmi = False
+            break
+    return (asalmi)
+
+
+for i in range(1, 10000):
+    if BasamaklarToplami(i) == AsalCarpanlarRakamlariToplami(i) and not Asalmi(i):
+        print(i)
+
+    
+
+
+

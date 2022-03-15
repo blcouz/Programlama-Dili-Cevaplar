@@ -1,0 +1,241 @@
+//---------------------------------------------1------------------------------------
+Console.Write("Sayı : ");
+int s1 = int.Parse(Console.ReadLine());
+Console.Write("Sayı : ");
+int s2 = int.Parse(Console.ReadLine());
+
+int PozitifBolenlerToplami(int sayi)//kendisi hariç
+{
+    int toplam = 0;
+    for (int i = 1; i < sayi; i++)
+    {
+        if (sayi % i == 0) toplam += i;
+    }
+    return toplam;
+}
+if(s1 == PozitifBolenlerToplami(s2)&s2 == PozitifBolenlerToplami(s1))
+    Console.WriteLine("{0} sayısı ile {1} sayısı dostsayıdır.",s1,s2);
+else Console.WriteLine("{0} sayısı ile {1} sayısı dostsayı değildir.",s1,s2);
+
+
+
+//-----------------------------------------2-----------------------------------------------------
+
+
+Console.Write("Sayı : ");
+int s1 = int.Parse(Console.ReadLine());
+Console.Write("Sayı : ");
+int s2 = int.Parse(Console.ReadLine());
+
+int PozitifBolenlerToplami(int sayi)//kendisi hariç
+{
+    int toplam = 0;
+    for (int i = 1; i < sayi; i++)
+    {
+        if (sayi % i == 0) toplam += i;
+    }
+    return toplam;
+}//dostlarmı
+
+// rakamları toplamına bölübebilen sayılarına niven sayı denir.
+
+
+int BasamalarToplami(int sayi)
+{
+    int bastop = 0;
+    while (sayi != 0)
+    {
+        bastop += sayi % 10;
+        sayi /= 10;
+    }
+    return bastop;
+}
+if (s1 == PozitifBolenlerToplami(s2) & s2 == PozitifBolenlerToplami(s1) & s1 % BasamalarToplami(s1) == 0 & s2 % BasamalarToplami(s2) == 0)
+    Console.WriteLine("{0} sayısı ile {1} sayısı dost niven sayılardır.", s1, s2);
+else Console.WriteLine("{0} sayısı ile {1} sayısı dost niven sayılar değildir.", s1, s2);
+
+
+//--------------------------------------------------------------------3-------------------------------------------------------------
+
+
+ Console.Write("Sayı : ");
+ int s1 = int.Parse(Console.ReadLine());
+ Console.Write("Sayı : ");
+ int s2 = int.Parse(Console.ReadLine());
+
+if (s1 != s2)
+{
+    int buyukSayi = Math.Max(s1, s2);
+    int kucukSayi = Math.Min(s1, s2);
+
+    bool Asalmi(int sayi)
+    {
+        if (sayi >= 2)
+        {
+            bool asalmi = true;
+            for (int i = 2; i < sayi; i++)
+            {
+                if (sayi % i == 0)
+                {
+                    asalmi = false;
+                    break;
+                }
+            }
+            return asalmi;
+        }
+        else return false;
+    }
+
+    for (int i = kucukSayi; i <= buyukSayi; i++)
+    {
+        if (Asalmi(i)) Console.Write(i + " ");
+    }
+}
+else Console.WriteLine("İki eşit sayı arasında her hangi bir sayı yokki asal sayı olsun.");
+
+
+
+
+//--------------------------------------------------------------------4-------------------------------------------------------------
+
+Console.Write("Sayı : ");
+int s1 = int.Parse(Console.ReadLine());
+
+bool Asalmi(int sayi)
+{
+    if (sayi >= 2)
+    {
+        bool asalmi = true;
+        for (int i = 2; i < sayi; i++)
+        {
+            if (sayi % i == 0)
+            {
+                asalmi = false;
+                break;
+            }
+        }
+        return asalmi;
+    }
+    else return false;
+}
+
+for (int i = s1-1; i >=2; i--)//Burada gerekli kontrollerle kendinden küçük asal sayı yoksa bu durum konsola yazdırılabilir ama ben bunla uğraşmayacağım.
+{
+    if (Asalmi(i))
+    {
+        Console.WriteLine("{0} sayısından küçük en büyük asal sayı {1} sayısıdır.",s1,i);
+        break;
+    }
+}
+
+
+
+
+//--------------------------------------------------------------------5-------------------------------------------------------------
+
+Console.Write("Kaçıncı Asal sayıyı istiyorsunuz : ");
+int n = int.Parse(Console.ReadLine());
+
+bool Asalmi(int sayi)
+{
+    if (sayi >= 2)
+    {
+        bool asalmi = true;
+        for (int i = 2; i < sayi; i++)
+        {
+            if (sayi % i == 0)
+            {
+                asalmi = false;
+                break;
+            }
+        }
+        return asalmi;
+    }
+    else return false;
+}
+
+int asalSayiSayaci = 0;// kaça kadar istiyosa saycaz teker teker
+
+int baslangicSayisi = 2;//ilk asal bu olduğu için
+int istenilenAsal;
+while (true)//Bu kısım daha farklı ve anlaşılabilir kodlanabilirdi.
+{
+    if (Asalmi(baslangicSayisi))
+    {
+        asalSayiSayaci++;
+        baslangicSayisi++;
+        if (asalSayiSayaci == n)
+        {
+            istenilenAsal = baslangicSayisi-1;//2 üst satırda 1 arttırdığım için geriye yanlış değerin dönmemesi için 1 azaltıp döndürüyorum.
+            break;
+        }
+    }
+    else baslangicSayisi++;
+}
+Console.WriteLine("{0}. asal sayı {1} sayısıdır.",n,istenilenAsal);
+
+
+
+
+//--------------------------------------------------------------------6-------------------------------------------------------------
+bool Asalmi(int sayi)
+{
+    if (sayi >= 2)
+    {
+        bool asalmi = true;
+        for (int i = 2; i < sayi; i++)
+        {
+            if (sayi % i == 0)
+            {
+                asalmi = false;
+                break;
+            }
+        }
+        return asalmi;
+    }
+    else return false;
+}
+
+int BasamalarToplami(int sayi)
+{
+    int bastop = 0;
+    while (sayi != 0)
+    {
+        bastop += sayi % 10;
+        sayi /= 10;
+    }
+    return bastop;
+}
+bool SmithSayimi(int sayi)
+{
+
+    if (!Asalmi(sayi))//gelen sayı asal olmayacak
+    {
+        int asalCarpanlarRakamlariToplami = 0;
+        int yedek = sayi;
+        for (int i = 2; sayi > 1; i++)//sayıyı sürekli asal çarpanlarına bölerek 1 e kadar düşürme işlemi sayı 1 olduğunda işlem bitti demektir.
+        {
+            if (sayi % i == 0)
+            {
+                asalCarpanlarRakamlariToplami += BasamalarToplami(i);//soruda bu kısım özellikle belirtilmiş.
+                sayi /= i;
+                i--;//eğer bölen sayıyı azaltmazsam asal çarpanlardan aynı olanların sadece 1 tanesini hesaba katmış oluruz . Örneğin 4 = 2*2 eğer i iyi azaltmasam sayi = 4/2 (2 burdabizim i değişkeni) yeni sayımız bölme işleminden sonra 2 olacak ama i miz for döngüsü yüzünden 1 arttığı için 3 olacak  yani yeni sayıyı yani 2 yi 3 e bölmeye çalışacak.Tam olarakanlatmak istediğim şeyi anlatabidiğimi sanmıyorum.
+            }
+        }
+        if (asalCarpanlarRakamlariToplami == BasamalarToplami(yedek)) return true;
+        else return false;
+    }
+    else return false;
+
+}
+
+for (int i = 1, sayac = 1; i <= 10000; i++)
+{
+    if (SmithSayimi(i))
+    {
+        Console.WriteLine("{0} -> {1}", sayac, i);
+        sayac++;
+    }
+}
+
+
