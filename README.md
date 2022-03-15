@@ -1,2 +1,2 @@
 # 2022 Programlama Dili Çözümleri
-Kullanıcıdan sayı isteme metni yazmaya gerek duymadım.
+Bazı çözümlerde kullanıcıdan sayı isteme metni yazmaya gerek duymadım.
