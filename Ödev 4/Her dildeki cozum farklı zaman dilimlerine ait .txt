@@ -1,0 +1,2 @@
+En son c# ta çözdüm.
+Ayrıca .NET 6.0 kullandım bununla ilgili bir hata alırsanız çözümlerdeki türkçe alfabe olayını kaldırmanız gerekir.Yada .NET 6 ya geçin -> VS 2022

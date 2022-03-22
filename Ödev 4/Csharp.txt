@@ -1,0 +1,160 @@
+---------------------------------------------------------------------------------1--------------------------------------------------------------------------
+Console.Write("İlk Hız : ");
+int ilkHiz = int.Parse(Console.ReadLine());
+Console.Write("Süre : ");
+int t = int.Parse(Console.ReadLine());
+int toplamAlinanYol = 0;
+for (int i = 0; i < t; i++)
+{
+    toplamAlinanYol += ilkHiz;
+    Console.WriteLine("{0}. saniyedeki hız = {1} , alınan yol = {2}",i+1,ilkHiz,toplamAlinanYol);
+    ilkHiz = (ilkHiz * 6) / 5;
+}
+---------------------------------------------------------------------------------2--------------------------------------------------------------------------
+using System.Globalization;//Bu latin alfabesi için.
+Console.Write("Bir cümle girin . ");
+string cumle = Console.ReadLine();
+string[] kelimeDizisi = cumle.Split();
+int toplamKelimeAdedi = kelimeDizisi.Length;//cümleyi boşluklardan ayırıp diziye attım dizinin leng özelliğide dizide kaç eleman olduğunu verir.
+int farkliKelimeAdedi = 0;
+for (int i = 0; i < kelimeDizisi.Length-1; i++)
+{
+    bool aynindanVarmi = false;
+    for (int j = i+1; j < kelimeDizisi.Length; j++)
+    {
+        if(kelimeDizisi[i].ToLower() == kelimeDizisi[j].ToLower(CultureInfo.CurrentCulture))//Geçerli dile göre alfabe kullanıyor yani lower yaparken I yı ı şeklinde küçültecek.
+        {
+            aynindanVarmi=true;
+            break;
+        }
+
+    }
+    if (!aynindanVarmi) farkliKelimeAdedi++;
+}
+Console.WriteLine("Toplam kelime adedi : {0}\nToplam farklı kelime adedi : {1}",toplamKelimeAdedi,farkliKelimeAdedi+1);
+---------------------------------------------------------------------------------3--------------------------------------------------------------------------
+Random random = new Random();
+int[] x = new int[5],y= new int[5];
+float[] z = new float[5];
+for (int i = 0; i < 5; i++)
+{
+    x[i] = random.Next(12,23);
+    y[i] = random.Next(12,23);
+}
+float xOrtalama = (float)x.Sum()/x.Length;
+for (int i = 0; i < y.Length; i++)
+{
+    z[i] = y[i] * xOrtalama;
+}
+float yOrtalama = (float)y.Sum()/y.Length;
+float zOrtalamama = (float)z.Sum()/z.Length;
+Console.WriteLine(String.Join(" ",x));
+Console.WriteLine("X : Ortalama : {0} ",xOrtalama);
+Console.WriteLine(String.Join(" ", y));
+Console.WriteLine("Y : Ortalama : {0} ",yOrtalama);
+Console.WriteLine(String.Join(" ", z));
+Console.WriteLine("Z : Ortalama : {0} ",zOrtalamama);
+---------------------------------------------------------------------------------4--------------------------------------------------------------------------
+Console.Write("Başlangıç Yüksekliği : ");
+float yukseklik = float.Parse(Console.ReadLine());
+float alinanYol = yukseklik;
+int ziplamaSayaci = 0;
+Console.WriteLine("Başlangıç : {0}",yukseklik);
+while(alinanYol <= 20)
+{
+    yukseklik = (yukseklik * 4) / 5;
+    alinanYol += yukseklik;
+    ziplamaSayaci++;
+    Console.WriteLine("{0}. zıplama -> {1}mt (toplam {2}mt)", ziplamaSayaci, Math.Round((double)yukseklik,2), Math.Round((double)alinanYol, 2));
+}
+
+---------------------------------------------------------------------------------5--------------------------------------------------------------------------
+
+using System.Globalization;
+Console.Write("Metin : ");
+String metin = Console.ReadLine();
+Console.Write("Yön gir (Sağ/Sol) : ");
+String yon = Console.ReadLine();
+Console.Write("Kaydırma adedi : ");
+int kaydirmaAdedi = int.Parse(Console.ReadLine())%metin.Length;
+
+if (yon.ToLower(CultureInfo.CurrentCulture) == "sağ")
+{
+    String sagKisim = metin.Substring(metin.Length - kaydirmaAdedi);
+    String solKisim = metin.Substring(0, metin.Length - kaydirmaAdedi);
+    Console.WriteLine(sagKisim + solKisim);
+}
+else if (yon.ToLower(CultureInfo.CurrentCulture) == "sol")
+{
+
+    String solKisim = metin.Substring(0,kaydirmaAdedi);
+    String sagKisim = metin.Substring(kaydirmaAdedi);
+    Console.WriteLine(sagKisim + solKisim);
+}
+else
+{
+    Console.WriteLine("Hatalı giriş byyy.");
+}
+
+---------------------------------------------------------------------------------6--------------------------------------------------------------------------
+
+
+
+
+Console.Write("Para miktarı : ");
+int para = int.Parse(Console.ReadLine());
+int yedek = para;
+int[] banknotlar = { 1, 5, 10, 20, 50, 100, 200 };
+int[] banknotAdetleri = { 0, 0, 0, 0, 0, 0, 0 };
+int banknotIndisi = 6;
+while (yedek > 0)
+{
+    if (banknotlar[banknotIndisi] <= yedek)
+    {
+        banknotAdetleri[banknotIndisi]++;
+        yedek -= banknotlar[banknotIndisi];
+    }
+    else banknotIndisi--;
+}
+String araMetin = "";
+for (int i = 6; i >=0; i--)
+{
+    if (banknotAdetleri[i] > 0)
+    {
+        araMetin += String.Format("{0}x{1}",banknotAdetleri[i],banknotlar[i]) +" + "; 
+    }
+}
+araMetin = araMetin.Substring(0, araMetin.Length - 3);
+Console.Write(para+ " TL -> "+banknotAdetleri.Sum()+" adet ("+araMetin+")");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

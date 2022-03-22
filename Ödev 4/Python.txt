@@ -1,0 +1,102 @@
+1 >
+
+hiz = int(input("Hız : "))
+sure = int(input("Süre : "))
+
+alinanYol = 0
+
+for i in range(1, sure+1):
+    alinanYol += hiz
+    print(i," - ",round(hiz,2)," -> ",round(alinanYol,2))
+    hiz = (hiz*6)/5
+
+2 >
+
+cumle = input("Cümle : ")
+
+kelimeler = cumle.split(" ")
+
+farkliKelimeler = []
+
+for i in range(0, len(kelimeler)):
+    if kelimeler[i] not in farkliKelimeler :
+        farkliKelimeler.append(kelimeler[i])
+
+print("Kelime sayısı : ",len(kelimeler))
+
+print(farkliKelimeler)
+
+3 >
+
+import random
+x = []
+y = []
+z = []
+for i in range(0, 5):
+    x.append(random.randint(12, 23))
+    y.append(random.randint(12, 23))
+
+xOrt = sum(x) / len(x)
+
+for i in range(0, 5):
+    z.append(round((y[i] * xOrt), 2))
+
+yOrt = sum(y) / len(y)
+zOrt = sum(z) / len(z)
+print(f"X[] = {x} X Ortalama : {xOrt}")
+print(f"Y[] = {y} Y Ortalama : {yOrt}")
+print(f"Z[] = {z} Z Ortalama : {zOrt}")
+
+    
+
+4 >
+
+yukseklik = int(input("Yükseklik : "))
+
+alinanYol = 0
+ziplamaSayisi = 0
+while alinanYol < 20:
+    alinanYol += yukseklik
+    ziplamaSayisi += 1
+    alinanYol += yukseklik*0.8
+    print("{}. Zıplama -> {} mt.(toplam {})".format(ziplamaSayisi,round(yukseklik*0.8,2),alinanYol))
+    yukseklik = round(yukseklik*0.8,2)
+
+5 >
+
+kelime = input("Kelime : ")
+sagSol = input("sag/sol : ")
+kacKarakter = int(input("Kaydırma Adedi : "))
+
+kacKarakter %= len(kelime)
+
+if sagSol == "sag":
+    bas = kelime[(len(kelime)-kacKarakter):len(kelime)]
+    son = kelime[0:(len(kelime)-kacKarakter)]
+    print(bas+son)
+else :
+    bas = kelime[kacKarakter:len(kelime)]
+    son = kelime[0:kacKarakter]
+    print(bas+son)
+    
+
+6 >
+
+banknotlar = [200, 100, 50, 20, 10, 5, 1]
+verilenler = [0, 0, 0, 0, 0, 0, 0]
+para = int(input("Para : "))
+
+x = 0
+sayac = 0
+while para > 0:
+    if para >= banknotlar[x]:
+        para -= banknotlar[x]
+        verilenler[x] += 1
+        sayac += 1
+        x -= 1
+    x += 1
+print("{} adet banknot kullanıldı.".format(sayac))
+for i in range(0, 7):
+    if verilenler[i] != 0:
+        print("{} x {} TL ".format(verilenler[i], banknotlar[i]))
+
