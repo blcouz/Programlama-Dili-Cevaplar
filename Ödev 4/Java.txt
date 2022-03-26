@@ -61,16 +61,16 @@ int[] x = new int[5], y = new int[5];
 
 
 Scanner scn = new Scanner(System.in);
-double yukseklik = scn.nextDouble();
-        int ziplamaAdedi =0;
+        double yukseklik = scn.nextDouble();
+        int ziplamaAdedi = 0;
         double toplamAlinanyol = 0;
-        for (int i = 0;; i++) {
-            toplamAlinanyol +=yukseklik*4/5 +yukseklik ;//String formatter çok uzun olan double sayısını kırpıyor. eğer onu kullanmasam  çıktılar şu şekilde olur "4. zıplama -> 1,644000005 mt.(Toplam : 21.254400000000004 mt )
-            System.out.println((i+1)+". zıplama -> "+String.format("%.3f",(yukseklik*4/5))+" mt."+"("+"Toplam : "+String.format("%.2f",toplamAlinanyol)+" mt )");
-            if(toplamAlinanyol>20||(yukseklik*4/5==0)) break;
+        for (int i = 0; ; i++) {
+            toplamAlinanyol += yukseklik * 4 / 5 + yukseklik;//String formatter çok uzun olan double sayısını kırpıyor. eğer onu kullanmasam  çıktılar şu şekilde olur "4. zıplama -> 1,644000005 mt.(Toplam : 21.254400000000004 mt )
+            System.out.println((i + 1) + ". zıplama -> " + String.format("%.3f", (yukseklik * 4 / 5)) + " mt." + "(" + "Toplam : " + String.format("%.2f", toplamAlinanyol) + " mt )");
+            if (toplamAlinanyol > 20 || (yukseklik * 4 / 5 == 0))
+                break;//imkansız bir zıplama işlemi yapılıyorsa döngüden çık..yani sonsuz döngüye girmesini önlüyor while döngüsünün.
             ziplamaAdedi++;
-            yukseklik *=(double) 4/5;
-
+            yukseklik *= (double) 4 / 5;
         }
 
 

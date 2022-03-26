@@ -59,13 +59,14 @@ Console.Write("Başlangıç Yüksekliği : ");
 float yukseklik = float.Parse(Console.ReadLine());
 float alinanYol = yukseklik;
 int ziplamaSayaci = 0;
-Console.WriteLine("Başlangıç : {0}",yukseklik);
-while(alinanYol <= 20)
+Console.WriteLine("Başlangıç : {0}", yukseklik);
+while (alinanYol <= 20)
 {
-    yukseklik = (yukseklik * 4) / 5;
+    yukseklik = (yukseklik * 4) / 5;//yerden yükselmesi
     alinanYol += yukseklik;
     ziplamaSayaci++;
-    Console.WriteLine("{0}. zıplama -> {1}mt (toplam {2}mt)", ziplamaSayaci, Math.Round((double)yukseklik,2), Math.Round((double)alinanYol, 2));
+    Console.WriteLine("{0}. zıplama -> {1}mt (toplam {2}mt)", ziplamaSayaci, Math.Round((double)yukseklik, 2), Math.Round((double)alinanYol, 2));
+    alinanYol += yukseklik;//yere düşmesi
 }
 
 ---------------------------------------------------------------------------------5--------------------------------------------------------------------------
