@@ -1,0 +1,108 @@
+//4 saatlik c bilgimle yazıyorum.
+
+----------------------------------1-------------------------
+
+
+	double sayi1;
+	double sayi2;
+	printf("Sayi : ");
+	scanf("%lf",&sayi1);
+	printf("Sayi : ");
+	scanf("%lf",&sayi2);
+	printf("%.lf",sayi1+sayi2);
+
+
+----------------------------------2-------------------------
+
+	int dogumYili,gecerliYil;
+	printf("Dogum yili : ");
+	scanf("%d",&dogumYili);
+	printf("Gecerli yil : ");
+	scanf("%d",&gecerliYil);
+	printf("Yas = %d",gecerliYil - dogumYili );
+
+
+----------------------------------3-------------------------
+
+
+	float kenarA,kenarB;
+	printf("Kisa ve uzun kenari aralarinda bir bosluk olacak sekilde giriniz. \n") ;
+	scanf(" %f %f",&kenarA,&kenarB);
+	printf("Dikdortgenin alani : %.2f",kenarA*kenarB);
+
+
+----------------------------------4-------------------------
+
+
+	float r,pi=3.14;
+	printf("Yaricap : ") ;
+	scanf("%f",&r);
+	printf("Dairenin alani : %.2f",pi*r*r);
+
+
+----------------------------------5-------------------------
+
+	int sayi1,sayi2;
+	printf("Aralarinda bir bosluk olacak sekilde iki sayi gir.\n");
+	scanf("%d%d",&sayi1,&sayi2);
+	if(sayi2>sayi1){
+		int a = sayi1;
+		sayi1 = sayi2;
+		sayi2 = a;
+	} 
+	printf("Bolum : %d , Kalan : %d ",sayi1/sayi2,sayi1%sayi2); 
+
+
+----------------------------------6-------------------------
+
+
+	int s1,s2,s3;
+	printf("Aralarinda bir bosluk olcak sekilde 3 sayi gir.\n");
+	scanf("%d%d%d",&s1,&s2,&s3);
+	printf("Ortalama : %.2f",(float)(s1+s2+s3)/3);
+
+
+----------------------------------7-------------------------
+
+
+	int s1,s2;
+	printf("Aralarinda bir bosluk olacak sekilde iki sayi gir.\n");
+	scanf("%d%d",&s1,&s2);
+	char op = '=';
+	if(s1>s2) op = '>';
+	if(s1<s2) op = '<';
+	printf("%d %c %d",s1,op,s2);
+
+----------------------------------8-------------------------
+
+
+	int sayi;
+	printf("Sayi : ");
+	scanf("%d",&sayi);
+	printf(sayi%2 == 0 ? "Cift" :"Tek");
+
+
+----------------------------------9-------------------------
+
+
+	float cel,f;
+	printf("Sicaklik : ");
+	scanf("%f",&cel);
+	printf("Fahrenheit : %.2f",(cel/18)*10+32);
+
+----------------------------------10-------------------------
+
+	int sayi1,sayi2;
+	printf("Aralarinda bir bosluk olacak sekilde iki sayi gir.\n");
+	scanf("%d%d",&sayi1,&sayi2);
+	if(sayi2>sayi1){
+		int a = sayi1;
+		sayi1 = sayi2;
+		sayi2 = a;
+	} 
+	printf("%d sayisi %d sayisinin bir tam boleni%s",sayi2,sayi1,sayi1%sayi2 == 0 ? "dir":" degildir.");
+
+
+
+
+
