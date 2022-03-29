@@ -1,0 +1,158 @@
+----------------------------1----------------------------
+
+void ParkUcretiHesapla(int saat)
+{
+    if (saat > 4) Console.WriteLine("Park Ücreti : 7 tl");
+    else
+    {
+        saat -= 3;
+        Console.WriteLine("Park Ücreti : {0} tl",7+saat*2);
+    }
+}
+
+------------------------------2-----------------------------
+
+int UsAlma(int sayi,int us)
+{
+    int carpim = 1;
+    for (int i = 0; i < us; i++) carpim *= sayi;
+    return carpim;
+}
+Console.Write("Sayı : ");
+int sayi = int.Parse(Console.ReadLine());
+Console.Write("Üs : ");
+int us = int.Parse(Console.ReadLine());
+
+Console.WriteLine("{0}^{1} = {2}",sayi,us,UsAlma(sayi,us));
+
+
+
+------------------------------3-----------------------------
+
+
+int Faktoriyel(int sayi)
+{
+    int carpim = 1;
+    for (int i = 2; i <= sayi; i++)
+    {
+        carpim *= i;
+    }
+    return carpim;
+}
+int KombinasyonBul(int n,int r)
+{
+    return (Faktoriyel(n) / (Faktoriyel(r) * Faktoriyel(n - r)));
+}
+Console.Write("C : ");
+int C = int.Parse(Console.ReadLine());
+Console.Write("R : ");
+int r = int.Parse(Console.ReadLine());
+
+Console.WriteLine(KombinasyonBul(C,r));
+
+
+------------------------------4-----------------------------
+
+
+int NetSayisi(int dogruSay,int yanlisSay)
+{
+    return dogruSay - (yanlisSay / 4);
+}
+int Hesapla(int net)
+{
+    return net * 10;
+}
+Console.Write("Doğru Sayısı : ");
+int dSay = int.Parse(Console.ReadLine());
+Console.Write("Yanlış Sayısı : ");
+int ySay = int.Parse(Console.ReadLine());
+Console.WriteLine(Hesapla(NetSayisi(dSay,ySay)));
+
+
+
+------------------------------5-----------------------------
+
+
+int[] stack = new int[50];
+int t = -1;
+void Push()
+{
+    Console.Write("Eklemek istediğin sayı : ");
+    int sayi = int.Parse(Console.ReadLine());
+    if (t < 49)
+    {
+        t++;
+        stack[t] = sayi;
+    }
+    else Console.WriteLine("Stack dolu");
+
+}
+void Pop()
+{
+    if (t > -1) t--;
+    else Console.WriteLine("Stack boş");
+}
+void Clear()
+{
+    t = -1;
+}
+void List()
+{
+    for (int i = 0; i <= t; i++)
+    {
+        Console.Write(stack[i] + "-");
+    }
+    Console.ReadKey();
+}
+void Exit()
+{
+    System.Environment.Exit(0);
+}
+
+
+while (true)
+{
+    Console.Clear();
+    Console.Write("1-> Push\n2->Pop\n3->Clear\n4->List\n5->Exit\n ---->  ");
+    int komut = int.Parse(Console.ReadLine());
+    switch (komut)
+    {
+        case 1:
+            {
+                Push();
+                break;
+            }
+        case 2:
+            {
+                Pop();
+                break;
+            }
+        case 3:
+            {
+                Clear();
+                break;
+            }
+        case 4:
+            {
+                List();
+                break;
+            }
+        case 5:
+            {
+                Exit();
+                break;
+            }
+        default:
+            {
+                continue;
+            }
+    }
+}
+
+
+
+
+
+
+
+
