@@ -1,0 +1,152 @@
+-------------------------------------------1--------------------------------
+
+	void ParkUcretiHesapla(){
+        Scanner scanner = new Scanner(System.in);
+        int sure = scanner.nextInt();
+        if(sure<4) System.out.println("Park Ücreti : 7tl");
+        else System.out.println("Park Ücreti : "+(7+(sure-3)*2));        
+    }
+
+
+-------------------------------------------2--------------------------------
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Sayı : ");
+        int sayi = scanner.nextInt();
+        System.out.print("Üs : ");
+        int us = scanner.nextInt();
+        System.out.println(UsAlma(sayi,us));
+        
+    }
+    static int UsAlma(int sayi, int us){
+        int carpim = 1;
+        for (int i = 0; i < us; i++) {
+            carpim *= sayi;
+        }
+        return carpim;
+    }
+
+-------------------------------------------3--------------------------------
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("N : ");
+        int n = scanner.nextInt();
+        System.out.print("R : ");
+        int r = scanner.nextInt();
+        System.out.println(C(n,r));
+
+    }
+    static int Faktoriyel(int sayi){
+        int carpim = 1;
+        for (int i = 2; i <=sayi; i++) {
+            carpim*= i;
+        }
+        return carpim;
+    }
+    static int C(int n,int r){
+        return Faktoriyel(n)/(Faktoriyel(r)*Faktoriyel(n-r));
+    }
+
+-------------------------------------------4--------------------------------
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Doğru Sayısı : ");
+        int dSay = scanner.nextInt();
+        System.out.print("Yanlış Sayısı : ");
+        int ySay = scanner.nextInt();
+        System.out.println(Hesapla(NetSayisi(dSay,ySay)));
+
+    }
+    static int Hesapla(int netSay){
+        return netSay*10;
+    }
+    static int NetSayisi(int dogruSayisi,int yanlisSayisi){
+        return  dogruSayisi -(yanlisSayisi/4);
+    }
+
+
+-------------------------------------------5--------------------------------
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Stack stack = new Stack();
+        while (true) {
+            boslukSpam();
+            //-----------------MENU------------------------------//
+            System.out.print("1-> Push\n2->Pop\n3->Clear\n4->List\n5->Exit\n ----> ");
+            int komut = scanner.nextInt();
+            switch (komut) {
+                case 1 -> stack.Push();
+                case 2 -> stack.Pop();
+                case 3 -> stack.Clear();
+                case 4 -> stack.List();
+                case 5 -> stack.Exit();
+                default -> boslukSpam();
+            }
+        }
+    }
+
+    static void boslukSpam() {
+        System.out.println("\n".repeat(10));
+    }
+}
+
+class Stack {
+    private int[] stack;
+    private int t = -1;
+
+    Stack() {
+        stack = new int[20];
+    }
+
+    Stack(int stackSize) {
+        stack = new int[stackSize];
+    }
+
+    void Push() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Sayı : ");
+        int sayi = scanner.nextInt();
+        if (t + 1 < stack.length) {
+            t++;
+            stack[t] = sayi;
+        } else System.out.println("Stack dolu.");
+        System.out.println();
+    }
+
+    void Pop() {
+        if (t >= 0) t--;
+        else {
+            System.out.println("Stack boş");
+            try {
+                System.out.println("herhangi tuşa bas");
+                System.in.read();
+            } catch (IOException e) {
+            }
+        }
+    }
+
+    void List() {
+        for (int i = 0; i <= t; i++) {
+            System.out.print(stack[i] + "-");
+        }
+        try {
+            System.out.println("herhangi tuşa bas");
+            System.in.read();
+        } catch (IOException e) {
+        }
+    }
+
+    void Clear() {
+        t = -1;
+    }
+
+    void Exit() {
+        System.exit(0);
+    }
+
+}
