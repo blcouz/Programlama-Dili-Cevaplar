@@ -1,0 +1,177 @@
+----------------------------------1-----------------------------
+
+	float x;
+	int t;
+	printf("Firlatma hizini ve sureyi bir boslukla yazin. \n");
+	scanf("%f%d",&x,&t);
+	int i = 0,toplamAlinanYol = 0;
+	for(;i<t;i++){
+		toplamAlinanYol += x;
+		printf("%d.sn -> HIZ : %.3f, Toplam Yol : %d \n",i+1,x,toplamAlinanYol );
+		x *= 1.2;
+	}
+
+
+
+----------------------------------2-----------------------------
+
+//Daha iyi çözümler eminim vardır.
+
+	char cumle[256];
+	int harfIndisi = 0;
+	for(;harfIndisi <256;harfIndisi++){
+		cumle[harfIndisi] = '$';
+	}
+	printf("Cumle : ");
+	fgets(cumle,256,stdin);
+	
+	int kelimeSayaci = 0,i=0;
+	printf("      KELIMELER          \n");
+	for(i=0;i<256;i++){
+		printf("%c",cumle[i]);
+		if(cumle[i] == ' '&& cumle[i+1] != ' '){
+			printf("\n");
+			kelimeSayaci++;
+			
+		}
+		if(cumle[i+1] == '$'){
+				break;
+		}
+	}
+	printf("\n\nKelime adedi : %d",kelimeSayaci+1);
+
+----------------------------------3-----------------------------
+
+
+	int x[5], y[5];
+	float z[5];
+	
+	int i = 0;//bunu sürümle alakalı olarak for döngüsündede oluşturabilirsiniz.
+	int xTop = 0,yTop= 0;
+	float zTop= 0;
+	for(;i<5;i++){
+		x[i] =  abs( rand()%(12+23) - (23-12));
+		xTop += x[i];
+		y[i] = abs( rand()%(12+23) - (23-12));
+		yTop += y[i];
+	}
+	float xOrt = (float)xTop/5,yOrt = (float)yTop/5,zOrt;
+	for(i=0;i<5;i++){
+		z[i] = y[i]*xOrt;
+		zTop += z[i];
+	}
+	zOrt = zTop/5;
+	
+	for(i = 0;i<5;i++){
+		printf("%d , ",x[i]);
+	}
+	printf("Toplam : %d , Ortalama : %.2f\n",xTop,xOrt);
+	for(i = 0;i<5;i++){
+		printf("%d , ",y[i]);
+	}
+	printf("Toplam : %d , Ortalama : %.2f\n",yTop,yOrt);
+	for(i = 0;i<5;i++){
+		printf("%.2f , ",z[i]);
+	}
+	printf("Toplam : %.2f , Ortalama : %.2f\n",zTop,zOrt);
+
+
+
+----------------------------------4-----------------------------
+
+
+
+	float yukseklik,alinanYol=0;
+	printf("Baslangic Yuksekligi : ");
+	scanf("%f",&yukseklik);
+	int ziplamaSayaci = 0;
+	while(alinanYol<20){
+		alinanYol += yukseklik;//duserken aldigi yol
+		if(alinanYol > 20){
+			printf("%d. ZIPLAMA -> Gecerli Yukseklik : 0 , Alinan Toplam Mesafe : %.2f",ziplamaSayaci,alinanYol);
+			break;
+		}
+		alinanYol += yukseklik*0.8;//ziplarken algigi yol // ziplama olayi nin gerceklesmesi icin dusmesi ve yukselmesi gerek. ben bu yorumlamaya gore cozdum.
+		yukseklik *= 0.8;
+		ziplamaSayaci ++;
+		printf("%d. ZIPLAMA -> Gecerli Yukseklik : %.2f , Alinan Toplam Mesafe : %.2f \n",ziplamaSayaci,yukseklik,alinanYol);
+	}
+
+
+
+----------------------------------5-----------------------------
+
+
+	char kelime[256],yon[5];
+	for(int i = 0;i<256;i++){
+		kelime[i] = '$';
+	}
+	int kaydirmaAdedi;
+	printf("Kelime (Kelime icinde '$' kullanma) : ");
+	scanf("%s",kelime);
+	printf("Yon : (sag / sol) ");
+	scanf("%s",yon);
+	printf("Kaydirma Adedi : ");
+	scanf("%d",&kaydirmaAdedi);
+	int kelimeUzunlugu = 0;
+	for(;kelimeUzunlugu<256;){
+		if(kelime[kelimeUzunlugu] != '$') kelimeUzunlugu ++;
+		else break;
+	}
+	kelimeUzunlugu--;//donguden 1 fazla cikiyor.
+	kaydirmaAdedi %= kelimeUzunlugu;
+	
+	if(yon[1] == 'a' ){//sag kelimesinin a harfi, o.
+		for(int i = 0;i<kaydirmaAdedi;i++){
+			char sonHarf = kelime[kelimeUzunlugu-1];
+			for(int i = kelimeUzunlugu -1;i>0;i--){//tüm harfleri bir saga kaydirir.                  //
+				kelime[i] = kelime[i-1];															  // Bu blok sayesinde bir kereligine tum harfler saga kayar.
+			}																						  // Bu blogu istedigimiz kadar calıstirarak istedigimiz sonucu elde ederiz.
+			kelime[0] = sonHarf;//ilk harfin solunda harf olmadigi icin sonuncu harfide basa aldim.	  //
+		}
+		for(int i = 0;i<kelimeUzunlugu ;i++){
+			printf("%c",kelime[i]);
+		}
+	}
+	else{//aksi taktirdede sol olarak kabul ediyorum.
+		for(int i = 0;i<kaydirmaAdedi;i++){
+			char ilkHarf = kelime[0];
+			for(int i = 0 ;i<kelimeUzunlugu-1;i++){
+				kelime[i] = kelime[i+1];
+			}
+			kelime[kelimeUzunlugu -1] = ilkHarf ;
+		}
+		for(int i = 0;i<kelimeUzunlugu ;i++){
+			printf("%c",kelime[i]);
+		}
+	}
+
+
+----------------------------------6-----------------------------
+
+
+
+
+	int banknotlar[] = {1,5,10,20,50,100,200};
+	int banknotAdetleri[] = {0,0,0,0,0,0,0};
+
+	int paraMiktari;
+	printf("Para Miktari : ");
+	scanf("%d",&paraMiktari);
+	int yedek = paraMiktari;
+	for(int i = 6;yedek>0;i--){
+		if(yedek >= banknotlar[i]){
+			yedek -= banknotlar[i];
+			banknotAdetleri[i]++;
+			i++;
+		} 
+	}
+	printf("%d tl -> ",paraMiktari);
+	for(int i = 6;i>=0;i--)
+	{
+		if(banknotAdetleri[i] > 0 ) printf("%d tl x %d + ",banknotlar[i],banknotAdetleri[i]);
+	}
+
+
+
+
