@@ -64,7 +64,7 @@ public static void main(String[] args) {
         return netSay*10;
     }
     static int NetSayisi(int dogruSayisi,int yanlisSayisi){
-        return  dogruSayisi -(yanlisSayisi/4);
+        return  dogruSayisi -((double)yanlisSayisi/4);
     }
 
 
