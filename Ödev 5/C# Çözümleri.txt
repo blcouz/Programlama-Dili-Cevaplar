@@ -54,9 +54,9 @@ Console.WriteLine(KombinasyonBul(C,r));
 ------------------------------4-----------------------------
 
 
-int NetSayisi(int dogruSay,int yanlisSay)
+double NetSayisi(int dogruSay,int yanlisSay)
 {
-    return dogruSay - (yanlisSay / 4);
+    return dogruSay - ((double)yanlisSay / 4);
 }
 int Hesapla(int net)
 {
