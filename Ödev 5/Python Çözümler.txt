@@ -1,0 +1,113 @@
+------------------------------1--------------------------
+
+def parkUcreti(sure):
+    if sure < 4:
+        return 7
+    else:
+        return 7 + (sure - 3) * 2
+
+
+print(parkUcreti(10));
+
+
+------------------------------2--------------------------
+
+def us_alma(sayi, us):
+    carpim = 1;
+    for i in range(1,us+1):
+        carpim = carpim * sayi;
+    return carpim;
+
+
+print(us_alma(3, 3))
+
+
+------------------------------3--------------------------
+
+def faktoriyel(sayi):
+    carpim = 1
+    for i in range(1, sayi + 1):
+        carpim = carpim * i;
+    return carpim
+
+
+def kombinasyon(n, r):
+    return faktoriyel(n) // (faktoriyel(r) * faktoriyel(n - r))
+
+print(kombinasyon(10,1))
+
+
+------------------------------4--------------------------
+
+def hesapla(netSayisi):
+    return netSayisi * 10;
+
+
+def net_sayisi(dogruSay, yanlisSay):
+    return dogruSay - yanlisSay // 4
+
+print(hesapla(net_sayisi(10,3)))
+
+------------------------------5--------------------------
+
+import sys
+
+
+class Stack:
+    __t = -1
+
+    def __init__(self):
+        self.__stack = [20]
+
+    def __int__(self, stack_size):
+        self.__stack = [stack_size]
+
+    def push(self, sayi):
+        if (self.__t + 1) < len(self.__stack):
+            self.__t = self.__t + 1
+            self.__stack.insert(self.__t, sayi)
+        else:
+            print("Stack Dolu.")
+            input("Herhangi bir tuşa bas.")
+            boslukSpam()
+
+    def pop(self):
+        if self.__t >= 0:
+            self.__t = self.__t - 1
+        else:
+            print("Stack boş.")
+            input("Herhangi bir tuşa bas.")
+            boslukSpam()
+
+    def clear(self):
+        self.__t = -1
+
+    def list(self):
+        for i in range(0, self.__t + 1):
+            print(self.__stack[i], " - ", end="")
+        input()
+        boslukSpam()
+
+    def exit(self):
+        sys.exit(0)
+
+
+def boslukSpam():
+    print("\n" * 10)
+
+
+stack = Stack()
+while True:
+    boslukSpam()
+    komut = int(input("1-> Push\n2->Pop\n3->Clear\n4->List\n5->Exit\n ---->  "))
+    if komut == 1:
+        eklenecekSayi = int(input("Eklenecek Sayı : "))
+        stack.push(eklenecekSayi)
+    elif komut == 2:
+        stack.pop()
+    elif komut == 3:
+        stack.clear()
+    elif komut == 4:
+        stack.list()
+    elif komut == 5:
+        stack.exit()
