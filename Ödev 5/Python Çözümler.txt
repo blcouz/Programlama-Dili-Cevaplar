@@ -44,7 +44,7 @@ def hesapla(netSayisi):
 
 
 def net_sayisi(dogruSay, yanlisSay):
-    return dogruSay - yanlisSay // 4
+    return dogruSay - yanlisSay / 4
 
 print(hesapla(net_sayisi(10,3)))
 
